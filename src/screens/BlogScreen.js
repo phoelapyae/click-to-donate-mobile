@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ScrollView, StatusBar, Image} from 'react-native';
-import {Text, Avatar, Box, HStack, VStack} from 'native-base';
+import {Text, Box, HStack, VStack} from 'native-base';
 import {useQuery} from 'react-query';
 import {useFetchBlogs} from '@hooks';
 import moment from 'moment';

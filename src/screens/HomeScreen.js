@@ -1,14 +1,21 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, StatusBar} from 'react-native';
+import AppBar from '@components/AppBar';
 
 const HomeScreen = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{fontFamily: 'Poppins-Regular'}}>Home Screen</Text>
-      <Text>Home Screen</Text>
+    <View style={styles.root}>
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
 
+      <AppBar name="Home" />
     </View>
   );
 };
 
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: '#f0f2f5',
+  },
+});
 export default HomeScreen;
