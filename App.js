@@ -2,6 +2,7 @@ import React, {Suspense} from 'react';
 import {LogBox} from 'react-native';
 import ApplicationNavigator from '@navigation';
 import SplashScreen from '@screens/SplashScreen';
+import {QueryClient, QueryClientProvider} from 'react-query';
 
 LogBox.ignoreLogs([
   'VirtualizedLists should never be nested',
@@ -9,11 +10,15 @@ LogBox.ignoreLogs([
   'Did not retain recoil value on',
 ]);
 
+const queryClient = new QueryClient();
+
 const App = () => {
   return (
-    <Suspense fallback={<SplashScreen />}>
-      <ApplicationNavigator />
-    </Suspense>
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={<SplashScreen />}>
+        <ApplicationNavigator />
+      </Suspense>
+    </QueryClientProvider>
   );
 };
 
